@@ -23,13 +23,15 @@ pip install -r requirements.txt
 ```bash
 python train.py --model mlp1        # ~5000 episodes
 python train.py --model mlp3
-python train.py --model snn         # ~8000 episodes (slower per episode)
+python train.py --model snn         # ~10000 episodes (slower per episode)
 ```
 
 Live colored progress table in the terminal. Checkpoints land in
 `checkpoints/<model>/` — `best.pt` (highest avg-100 survival) and `latest.pt`
 (every 250 episodes). Resume an interrupted run with `--resume`. Useful
-overrides: `--episodes --lr --gamma --beta --hidden --spawn-prob --entropy-coef`.
+overrides: `--episodes --lr --gamma --beta --hidden --spawn-prob
+--entropy-coef --seed --tag` (`--tag` suffixes the checkpoint dir, handy for
+seed sweeps — REINFORCE is seed-sensitive, the shipped SNN is the best of 4).
 
 ## Evaluate
 
@@ -70,13 +72,16 @@ episodes cap at 200 steps; watch mode is uncapped.
 
 ## Key design points
 
-- **SNN:** `snn.Leaky` hidden layers (surrogate gradient, `atan`), one forward
-  pass per real game tick — no internal `num_steps` loop. Membrane potential
-  persists across steps and carries the autograd graph, so the once-per-episode
-  REINFORCE backward pass is BPTT through the whole episode. Output head is a
-  plain `nn.Linear` decoder over the last spiking layer (avoids spike-tie /
-  no-spike readout issues).
+- **SNN:** `snn.Leaky` hidden layers (surrogate gradient, `atan`, per-neuron
+  *learnable* β initialized at 0.95), one forward pass per real game tick — no
+  internal `num_steps` loop. Membrane potential persists across steps and
+  carries the autograd graph, so the backward pass is BPTT through the whole
+  episode. Readout is the canonical snnTorch decoder: a non-spiking output
+  `Leaky` (`reset_mechanism="none"`) whose membrane potential is the logits —
+  hidden layers still communicate purely by spikes.
 - **REINFORCE:** returns-to-go, EMA baseline, per-episode advantage
-  normalization, small entropy bonus (0.01), grad-clip 1.0, Adam 1e-3, γ=0.97.
+  normalization, entropy bonus (0.01, annealed for the SNN), grad-clip 1.0,
+  Adam 1e-3 (cosine-decayed to 1e-4 for the SNN), γ=0.97. SNN updates
+  accumulate gradients over 8 episodes per optimizer step to tame variance.
 - Swapping policies changes only which module `train.py` builds — rollout,
   loss, and logging are identical across all three.

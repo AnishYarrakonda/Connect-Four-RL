@@ -8,6 +8,7 @@ Resume:  python train.py --model snn --resume
 """
 
 import argparse
+import math
 import os
 import time
 from collections import deque
@@ -36,7 +37,9 @@ console = Console()
 
 def build_policy(cfg):
     if cfg.model == "snn":
-        return SNNPolicy(cfg.obs_dim, cfg.hidden, cfg.beta)
+        return SNNPolicy(cfg.obs_dim, cfg.hidden, cfg.beta,
+                         learn_beta=getattr(cfg, "learn_beta", False),
+                         recurrent=getattr(cfg, "recurrent", False))
     return MLPPolicy(cfg.obs_dim, cfg.hidden)
 
 
@@ -45,11 +48,12 @@ def run_episode(env, policy, obs_builder, cfg, tracker=None, greedy=False):
     occ, _ = env.reset()
     policy.reset_state()
     obs_builder.reset(occ)
-    log_probs, entropies, rewards = [], [], []
+    log_probs, entropies, rewards, obs_seq = [], [], [], []
 
     done = False
     while not done:
         obs = obs_builder.build(env.agent_onehot())
+        obs_seq.append(obs)
         logits = policy(obs)
         dist = torch.distributions.Categorical(logits=logits)
         action = logits.argmax() if greedy else dist.sample()
@@ -62,7 +66,7 @@ def run_episode(env, policy, obs_builder, cfg, tracker=None, greedy=False):
         obs_builder.push(occ)
         rewards.append(reward)
 
-    return log_probs, entropies, rewards, env.steps
+    return log_probs, entropies, rewards, obs_seq, env.steps
 
 
 def make_stats_table(cfg, ep, stats):
@@ -97,16 +101,24 @@ def make_stats_table(cfg, ep, stats):
     return t
 
 
-def train(cfg, resume=False):
-    torch.manual_seed(0)
+def train(cfg, resume=False, tag=""):
+    torch.manual_seed(cfg.seed)
     env = DodgeEnv(spawn_prob=cfg.spawn_prob, max_steps=cfg.max_steps_train)
     policy = build_policy(cfg)
-    optimizer = torch.optim.Adam(policy.parameters(), lr=cfg.lr)
+    params = list(policy.parameters())
+    critic = None
+    if cfg.critic:
+        # training-only value baseline; the deployed policy stays purely spiking
+        critic = torch.nn.Sequential(
+            torch.nn.Linear(cfg.obs_dim, 128), torch.nn.ReLU(),
+            torch.nn.Linear(128, 1))
+        params += list(critic.parameters())
+    optimizer = torch.optim.Adam(params, lr=cfg.lr)
     baseline = EMABaseline(cfg.baseline_alpha)
     obs_builder = ObsBuilder(cfg)
     tracker = SparsityTracker(policy, cfg.obs_dim, cfg.hidden) if cfg.model == "snn" else None
 
-    d = ckpt_dir(cfg.model)
+    d = ckpt_dir(cfg.model + tag)
     start_ep, best_avg = 0, float("-inf")
     if resume:
         path = os.path.join(d, "latest.pt")
@@ -143,27 +155,50 @@ def train(cfg, resume=False):
     done_eps = 0
     with Live(console=console, refresh_per_second=8) as live:
         for ep in range(start_ep + 1, cfg.episodes + 1):
+            frac = ep / cfg.episodes
+            if cfg.lr_final > 0:
+                lr_now = cfg.lr_final + 0.5 * (cfg.lr - cfg.lr_final) * (1 + math.cos(math.pi * frac))
+                for g in optimizer.param_groups:
+                    g["lr"] = lr_now
+            ent_coef = (cfg.entropy_coef + (cfg.entropy_final - cfg.entropy_coef) * frac
+                        if cfg.entropy_final >= 0 else cfg.entropy_coef)
+            # spawn-rate curriculum: easy early episodes, full difficulty after ramp
+            at_full_difficulty = True
+            if cfg.spawn_ramp > 0:
+                ramp = min(1.0, frac / cfg.spawn_ramp)
+                env.set_spawn_prob(cfg.spawn_start + (cfg.spawn_prob - cfg.spawn_start) * ramp)
+                at_full_difficulty = ramp >= 1.0
             if tracker:
                 tracker.reset()
-            log_probs, entropies, rewards, steps = run_episode(
+            log_probs, entropies, rewards, obs_seq, steps = run_episode(
                 env, policy, obs_builder, cfg, tracker
             )
 
             G = returns_to_go(rewards, cfg.gamma)
             ep_return = float(G[0])
             b = baseline.update(ep_return)
-            adv = G - b
+            critic_loss = 0.0
+            if critic is not None:
+                V = critic(torch.stack(obs_seq)).squeeze(-1)
+                adv = G - V.detach()
+                critic_loss = torch.nn.functional.mse_loss(V, G)
+            else:
+                adv = G - b
             if len(adv) > 1:
                 adv = (adv - adv.mean()) / (adv.std() + 1e-8)
 
             log_probs = torch.stack(log_probs)
             entropy = torch.stack(entropies).mean()
-            loss = -(log_probs * adv).sum() - cfg.entropy_coef * entropy
+            k = max(1, cfg.batch_episodes)
+            loss = (-(log_probs * adv).sum() - ent_coef * entropy
+                    + 0.5 * critic_loss) / k
 
-            optimizer.zero_grad()
+            # accumulate gradients over k episodes per optimizer step
             loss.backward()
-            torch.nn.utils.clip_grad_norm_(policy.parameters(), cfg.grad_clip)
-            optimizer.step()
+            if ep % k == 0 or ep == cfg.episodes:
+                torch.nn.utils.clip_grad_norm_(params, cfg.grad_clip)
+                optimizer.step()
+                optimizer.zero_grad()
 
             survival_window.append(steps)
             avg = sum(survival_window) / len(survival_window)
@@ -172,7 +207,8 @@ def train(cfg, resume=False):
             sparsity = tracker.sparsity if tracker else 0.0
 
             min_window = min(cfg.avg_window, cfg.episodes)
-            new_best = len(survival_window) >= min_window and avg > best_avg
+            new_best = (len(survival_window) >= min_window and avg > best_avg
+                        and at_full_difficulty)
             if new_best:
                 best_avg = avg
                 save_checkpoint(os.path.join(d, "best.pt"), policy, optimizer,
@@ -214,12 +250,16 @@ def main():
     ap.add_argument("--hidden", type=int, default=None)
     ap.add_argument("--spawn-prob", dest="spawn_prob", type=float, default=None)
     ap.add_argument("--entropy-coef", dest="entropy_coef", type=float, default=None)
+    ap.add_argument("--seed", type=int, default=None)
+    ap.add_argument("--tag", type=str, default="",
+                    help="suffix for the checkpoint dir (e.g. seed sweeps)")
     ap.add_argument("--resume", action="store_true")
     args = ap.parse_args()
 
-    overrides = {k: v for k, v in vars(args).items() if k not in ("model", "resume")}
+    overrides = {k: v for k, v in vars(args).items()
+                 if k not in ("model", "resume", "tag")}
     cfg = make_config(args.model, **overrides)
-    train(cfg, resume=args.resume)
+    train(cfg, resume=args.resume, tag=args.tag)
 
 
 if __name__ == "__main__":
