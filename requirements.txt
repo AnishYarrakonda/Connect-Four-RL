@@ -1,7 +1,0 @@
-torch>=2.0
-snntorch>=0.9
-numpy
-rich
-fastapi
-uvicorn[standard]
-matplotlib
