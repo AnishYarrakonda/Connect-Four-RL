@@ -92,6 +92,10 @@
       <div class="board" id="board"></div>
       <div class="controls">
         <button id="newgame">New game</button>
+        <select id="mode">
+          <option value="hva">Human vs AI</option>
+          <option value="ava">AI vs AI</option>
+        </select>
         <select id="first">
           <option value="human">You start</option>
           <option value="ai">AI starts</option>
@@ -195,6 +199,7 @@ function renderProbs(probs) {
 
 async function humanMove(col) {
   if (gameOver || !humanTurn || thinking) return;
+  if (document.getElementById('mode').value === 'ava') return;
   const r = drop(grid, col, 1);
   if (r < 0) return;
   lastCell = [r, col];
@@ -217,7 +222,8 @@ async function aiMove() {
     });
     const data = await res.json();
     if (data.error) { statusEl.textContent = data.error; thinking = false; return; }
-    const r = drop(grid, data.column, 2);
+    const p = (moves.length % 2) + 1;  // 1 = red (first mover), 2 = yellow
+    const r = drop(grid, data.column, p);
     lastCell = [r, data.column];
     moves.push(data.column);
     render(); renderProbs(data.probs);
@@ -225,9 +231,10 @@ async function aiMove() {
     valueEl.textContent = `AI value estimate: ${v > 0 ? '+' : ''}${v}  (` +
       (v > 0.3 ? 'AI thinks it’s winning' : v < -0.3 ? 'AI thinks it’s losing' : 'balanced') + ')';
     metaEl.textContent = `serving checkpoint iteration ${data.ckpt_iter}`;
-    if (data.ai_won) { statusEl.textContent = 'AI wins. 🟡'; gameOver = true; }
+    const ava = document.getElementById('mode').value === 'ava';
+    if (data.ai_won) { statusEl.textContent = ava ? (p === 1 ? 'Red wins. 🔴' : 'Yellow wins. 🟡') : 'AI wins. 🟡'; gameOver = true; }
     else if (data.draw) { statusEl.textContent = 'Draw.'; gameOver = true; }
-    else statusEl.textContent = 'Your move.';
+    else statusEl.textContent = ava ? (p === 1 ? 'Yellow thinking…' : 'Red thinking…') : 'Your move.';
   } catch (e) {
     statusEl.textContent = 'Server error — is uvicorn running?';
   }
@@ -235,14 +242,27 @@ async function aiMove() {
   humanTurn = true;
 }
 
+let gameGen = 0;
+async function aiVsAiLoop(gen) {
+  while (!gameOver && gen === gameGen) {
+    await aiMove();
+    await new Promise(res => setTimeout(res, 350));
+  }
+}
+
 function newGame() {
-  moves = []; grid = newGrid(); gameOver = false; lastCell = null;
+  gameGen++;
+  moves = []; grid = newGrid(); gameOver = false; lastCell = null; thinking = false;
   renderProbs(null); valueEl.textContent = '';
   render();
-  if (document.getElementById('first').value === 'ai') { humanTurn = false; aiMove(); }
+  if (document.getElementById('mode').value === 'ava') {
+    humanTurn = false; statusEl.textContent = 'Red thinking…';
+    aiVsAiLoop(gameGen);
+  } else if (document.getElementById('first').value === 'ai') { humanTurn = false; aiMove(); }
   else { humanTurn = true; statusEl.textContent = 'Your move.'; }
 }
 document.getElementById('newgame').onclick = newGame;
+document.getElementById('mode').onchange = newGame;
 
 /* ---------- charts ---------- */
 const tip = document.getElementById('tip');
