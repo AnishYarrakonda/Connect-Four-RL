@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connect Four RL</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --ink: #ffffff;
+    --ink-2: #c3c2b7;
+    --muted: #898781;
+    --grid: #2c2c2a;
+    --baseline: #383835;
+    --border: rgba(255,255,255,0.10);
+    --series-1: #3987e5;  /* blue */
+    --series-2: #008300;  /* green */
+    --series-3: #d55181;  /* magenta */
+    --red: #e34948;
+    --yellow: #eda100;
+    --board: #1d3557;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 24px 16px 60px;
+  }
+  h1 { font-size: 20px; font-weight: 600; margin-bottom: 4px; }
+  .sub { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+  .layout { display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; }
+  .panel {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px;
+  }
+  /* probabilities row */
+  .probs { display: grid; grid-template-columns: repeat(7, 56px); gap: 6px; margin-bottom: 8px; height: 54px; align-items: end; }
+  .prob { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+  .prob .bar { width: 26px; background: var(--series-1); border-radius: 4px 4px 0 0; min-height: 0; transition: height .3s; }
+  .prob .pct { font-size: 10px; color: var(--ink-2); margin-bottom: 2px; }
+  .board { display: grid; grid-template-columns: repeat(7, 56px); gap: 6px; background: var(--board); padding: 10px; border-radius: 10px; }
+  .cell {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--page); cursor: pointer; position: relative;
+  }
+  .cell.p1 { background: var(--red); }
+  .cell.p2 { background: var(--yellow); }
+  .cell.last::after {
+    content: ""; position: absolute; inset: 21px; border-radius: 50%;
+    background: rgba(255,255,255,0.55);
+  }
+  .controls { display: flex; gap: 10px; margin-top: 14px; align-items: center; flex-wrap: wrap; }
+  button {
+    background: var(--series-1); color: #fff; border: 0; border-radius: 8px;
+    padding: 8px 14px; font-size: 14px; cursor: pointer;
+  }
+  button.ghost { background: transparent; border: 1px solid var(--border); color: var(--ink-2); }
+  select {
+    background: var(--surface); color: var(--ink); border: 1px solid var(--border);
+    border-radius: 8px; padding: 7px 8px; font-size: 13px;
+  }
+  #status { margin-top: 12px; font-size: 14px; min-height: 20px; }
+  #valuebox { color: var(--ink-2); font-size: 13px; margin-top: 6px; min-height: 18px; }
+  /* charts */
+  .charts { width: 460px; display: flex; flex-direction: column; gap: 18px; }
+  .chart-title { font-size: 13px; color: var(--ink-2); margin-bottom: 6px; font-weight: 600; }
+  .legend { display: flex; gap: 14px; font-size: 11px; color: var(--ink-2); margin-bottom: 6px; flex-wrap: wrap; }
+  .legend span::before {
+    content: ""; display: inline-block; width: 10px; height: 10px;
+    border-radius: 2px; margin-right: 5px; background: var(--c); vertical-align: -1px;
+  }
+  svg text { font-family: system-ui, sans-serif; font-size: 10px; fill: var(--muted); }
+  .tip {
+    position: fixed; pointer-events: none; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px;
+    font-size: 11px; color: var(--ink-2); display: none; z-index: 10;
+  }
+  .meta { color: var(--muted); font-size: 12px; margin-top: 10px; }
+</style>
+</head>
+<body>
+  <h1>Connect Four — RL agent</h1>
+  <div class="sub">AlphaZero-lite, trained by self-play on this machine. You are <b style="color:var(--red)">red</b>.</div>
+
+  <div class="layout">
+    <div class="panel">
+      <div class="probs" id="probs"></div>
+      <div class="board" id="board"></div>
+      <div class="controls">
+        <button id="newgame">New game</button>
+        <select id="first">
+          <option value="human">You start</option>
+          <option value="ai">AI starts</option>
+        </select>
+        <select id="sims">
+          <option value="50">Fast (50 sims)</option>
+          <option value="200" selected>Normal (200 sims)</option>
+          <option value="800">Strong (800 sims)</option>
+        </select>
+      </div>
+      <div id="status">Your move.</div>
+      <div id="valuebox"></div>
+      <div class="meta" id="meta"></div>
+    </div>
+
+    <div class="charts">
+      <div class="panel">
+        <div class="chart-title">Training loss</div>
+        <div class="legend">
+          <span style="--c:var(--series-1)">policy loss</span>
+          <span style="--c:var(--series-2)">value loss</span>
+        </div>
+        <svg id="losschart" width="420" height="150"></svg>
+      </div>
+      <div class="panel">
+        <div class="chart-title">Win rate vs minimax (evaluation only)</div>
+        <div class="legend">
+          <span style="--c:var(--series-1)">depth 1</span>
+          <span style="--c:var(--series-2)">depth 3</span>
+          <span style="--c:var(--series-3)">depth 5</span>
+        </div>
+        <svg id="winchart" width="420" height="150"></svg>
+      </div>
+      <div class="panel">
+        <div class="chart-title">Latest training stats</div>
+        <div class="meta" id="trainmeta">loading…</div>
+      </div>
+    </div>
+  </div>
+  <div class="tip" id="tip"></div>
+
+<script>
+const ROWS = 6, COLS = 7;
+let moves = [], grid, gameOver, humanTurn, thinking = false;
+
+const boardEl = document.getElementById('board');
+const probsEl = document.getElementById('probs');
+const statusEl = document.getElementById('status');
+const valueEl = document.getElementById('valuebox');
+const metaEl = document.getElementById('meta');
+
+function newGrid() { return Array.from({length: ROWS}, () => Array(COLS).fill(0)); }
+
+function drop(g, col, p) {
+  for (let r = ROWS - 1; r >= 0; r--) if (g[r][col] === 0) { g[r][col] = p; return r; }
+  return -1;
+}
+
+function winner(g) {
+  const dirs = [[0,1],[1,0],[1,1],[1,-1]];
+  for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) {
+    const p = g[r][c]; if (!p) continue;
+    for (const [dr, dc] of dirs) {
+      let k = 1;
+      while (k < 4) {
+        const rr = r + dr*k, cc = c + dc*k;
+        if (rr < 0 || rr >= ROWS || cc < 0 || cc >= COLS || g[rr][cc] !== p) break;
+        k++;
+      }
+      if (k === 4) return p;
+    }
+  }
+  return 0;
+}
+
+let lastCell = null;
+function render() {
+  boardEl.innerHTML = '';
+  for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) {
+    const d = document.createElement('div');
+    d.className = 'cell' + (grid[r][c] ? ' p' + grid[r][c] : '');
+    if (lastCell && lastCell[0] === r && lastCell[1] === c) d.className += ' last';
+    d.onclick = () => humanMove(c);
+    boardEl.appendChild(d);
+  }
+}
+
+function renderProbs(probs) {
+  probsEl.innerHTML = '';
+  for (let c = 0; c < COLS; c++) {
+    const w = document.createElement('div'); w.className = 'prob';
+    const pct = document.createElement('div'); pct.className = 'pct';
+    const bar = document.createElement('div'); bar.className = 'bar';
+    if (probs) {
+      pct.textContent = Math.round(probs[c] * 100) + '%';
+      bar.style.height = Math.max(2, probs[c] * 40) + 'px';
+    } else { pct.textContent = ''; bar.style.height = '0px'; }
+    w.appendChild(pct); w.appendChild(bar); probsEl.appendChild(w);
+  }
+}
+
+async function humanMove(col) {
+  if (gameOver || !humanTurn || thinking) return;
+  const r = drop(grid, col, 1);
+  if (r < 0) return;
+  lastCell = [r, col];
+  moves.push(col); render();
+  const w = winner(grid);
+  if (w === 1) { statusEl.textContent = 'You win! 🔴'; gameOver = true; return; }
+  if (moves.length === 42) { statusEl.textContent = 'Draw.'; gameOver = true; return; }
+  humanTurn = false;
+  await aiMove();
+}
+
+async function aiMove() {
+  thinking = true;
+  statusEl.textContent = 'AI is thinking…';
+  try {
+    const sims = +document.getElementById('sims').value;
+    const res = await fetch('/api/move', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({moves, sims})
+    });
+    const data = await res.json();
+    if (data.error) { statusEl.textContent = data.error; thinking = false; return; }
+    const r = drop(grid, data.column, 2);
+    lastCell = [r, data.column];
+    moves.push(data.column);
+    render(); renderProbs(data.probs);
+    const v = data.value;
+    valueEl.textContent = `AI value estimate: ${v > 0 ? '+' : ''}${v}  (` +
+      (v > 0.3 ? 'AI thinks it’s winning' : v < -0.3 ? 'AI thinks it’s losing' : 'balanced') + ')';
+    metaEl.textContent = `serving checkpoint iteration ${data.ckpt_iter}`;
+    if (data.ai_won) { statusEl.textContent = 'AI wins. 🟡'; gameOver = true; }
+    else if (data.draw) { statusEl.textContent = 'Draw.'; gameOver = true; }
+    else statusEl.textContent = 'Your move.';
+  } catch (e) {
+    statusEl.textContent = 'Server error — is uvicorn running?';
+  }
+  thinking = false;
+  humanTurn = true;
+}
+
+function newGame() {
+  moves = []; grid = newGrid(); gameOver = false; lastCell = null;
+  renderProbs(null); valueEl.textContent = '';
+  render();
+  if (document.getElementById('first').value === 'ai') { humanTurn = false; aiMove(); }
+  else { humanTurn = true; statusEl.textContent = 'Your move.'; }
+}
+document.getElementById('newgame').onclick = newGame;
+
+/* ---------- charts ---------- */
+const tip = document.getElementById('tip');
+
+function lineChart(svg, series, yDomain, fmt) {
+  // series: [{color, points: [[x,y],...], name}]
+  const W = 420, H = 150, m = {l: 34, r: 8, t: 6, b: 18};
+  svg.innerHTML = '';
+  const xs = series.flatMap(s => s.points.map(p => p[0]));
+  if (!xs.length) return;
+  const xmin = Math.min(...xs), xmax = Math.max(...xs, xmin + 1);
+  const [ymin, ymax] = yDomain;
+  const X = x => m.l + (x - xmin) / (xmax - xmin) * (W - m.l - m.r);
+  const Y = y => m.t + (1 - (y - ymin) / (ymax - ymin)) * (H - m.t - m.b);
+  const ns = 'http://www.w3.org/2000/svg';
+  // gridlines + y labels
+  for (let i = 0; i <= 4; i++) {
+    const yv = ymin + (ymax - ymin) * i / 4;
+    const g = document.createElementNS(ns, 'line');
+    g.setAttribute('x1', m.l); g.setAttribute('x2', W - m.r);
+    g.setAttribute('y1', Y(yv)); g.setAttribute('y2', Y(yv));
+    g.setAttribute('stroke', i === 0 ? 'var(--baseline)' : 'var(--grid)');
+    svg.appendChild(g);
+    const t = document.createElementNS(ns, 'text');
+    t.setAttribute('x', m.l - 5); t.setAttribute('y', Y(yv) + 3); t.setAttribute('text-anchor', 'end');
+    t.textContent = fmt(yv); svg.appendChild(t);
+  }
+  // x labels
+  [xmin, Math.round((xmin + xmax) / 2), xmax].forEach(xv => {
+    const t = document.createElementNS(ns, 'text');
+    t.setAttribute('x', X(xv)); t.setAttribute('y', H - 4); t.setAttribute('text-anchor', 'middle');
+    t.textContent = xv; svg.appendChild(t);
+  });
+  for (const s of series) {
+    if (!s.points.length) continue;
+    const path = document.createElementNS(ns, 'path');
+    path.setAttribute('d', s.points.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(Math.max(ymin, Math.min(ymax, p[1]))).toFixed(1)).join(''));
+    path.setAttribute('fill', 'none'); path.setAttribute('stroke', s.color); path.setAttribute('stroke-width', '2');
+    svg.appendChild(path);
+    if (s.points.length <= 2) {
+      for (const p of s.points) {
+        const dot = document.createElementNS(ns, 'circle');
+        dot.setAttribute('cx', X(p[0])); dot.setAttribute('cy', Y(Math.max(ymin, Math.min(ymax, p[1]))));
+        dot.setAttribute('r', '4'); dot.setAttribute('fill', s.color);
+        svg.appendChild(dot);
+      }
+    }
+  }
+  svg.onmousemove = (e) => {
+    const rect = svg.getBoundingClientRect();
+    const xv = xmin + (e.clientX - rect.left - m.l) / (W - m.l - m.r) * (xmax - xmin);
+    let lines = [];
+    for (const s of series) {
+      if (!s.points.length) continue;
+      let best = s.points[0];
+      for (const p of s.points) if (Math.abs(p[0] - xv) < Math.abs(best[0] - xv)) best = p;
+      lines.push(`${s.name}: ${fmt(best[1])} (iter ${best[0]})`);
+    }
+    tip.style.display = 'block';
+    tip.style.left = (e.clientX + 12) + 'px'; tip.style.top = (e.clientY + 12) + 'px';
+    tip.innerHTML = lines.join('<br>');
+  };
+  svg.onmouseleave = () => tip.style.display = 'none';
+}
+
+const css = getComputedStyle(document.documentElement);
+const C1 = css.getPropertyValue('--series-1').trim();
+const C2 = css.getPropertyValue('--series-2').trim();
+const C3 = css.getPropertyValue('--series-3').trim();
+
+async function refreshProgress() {
+  try {
+    const log = await (await fetch('/api/progress')).json();
+    if (!log.length) { document.getElementById('trainmeta').textContent = 'no training log yet'; return; }
+    const pl = log.filter(e => e.policy_loss > 0).map(e => [e.iter, e.policy_loss]);
+    const vl = log.filter(e => e.value_loss > 0).map(e => [e.iter, e.value_loss]);
+    const maxLoss = Math.max(0.5, ...pl.map(p => p[1]), ...vl.map(p => p[1]));
+    lineChart(document.getElementById('losschart'),
+      [{color: C1, points: pl, name: 'policy'}, {color: C2, points: vl, name: 'value'}],
+      [0, Math.ceil(maxLoss * 10) / 10], v => v.toFixed(2));
+    const evals = log.filter(e => e.eval);
+    const wr = d => evals.map(e => [e.iter, e.eval['d' + d] ? e.eval['d' + d].win : 0]);
+    lineChart(document.getElementById('winchart'),
+      [{color: C1, points: wr(1), name: 'd1'}, {color: C2, points: wr(3), name: 'd3'}, {color: C3, points: wr(5), name: 'd5'}],
+      [0, 1], v => Math.round(v * 100) + '%');
+    const last = log[log.length - 1];
+    document.getElementById('trainmeta').innerHTML =
+      `iteration <b>${last.iter}</b> &nbsp;·&nbsp; ${last.elapsed_min} min elapsed &nbsp;·&nbsp; ` +
+      `buffer ${last.buffer.toLocaleString()} samples<br>` +
+      `policy loss ${last.policy_loss} &nbsp;·&nbsp; value loss ${last.value_loss} &nbsp;·&nbsp; ` +
+      `${last.selfplay_s}s self-play + ${last.train_s}s train per iter`;
+  } catch (e) { /* server not up yet */ }
+}
+
+newGame();
+refreshProgress();
+setInterval(refreshProgress, 15000);
+</script>
+</body>
+</html>

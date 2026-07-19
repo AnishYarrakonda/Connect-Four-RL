@@ -1,0 +1,344 @@
+device: mps
+{'iter': 0, 'elapsed_min': 0.3, 'buffer': 1914, 'policy_loss': 1.825, 'value_loss': 0.336, 'selfplay_s': 16.7, 'train_s': 3.9, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 0.3333333333333333, 'draw': 0.16666666666666666, 'loss': 0.5}, 'd5': {'win': 0.0, 'draw': 0.16666666666666666, 'loss': 0.8333333333333334}}}
+{'iter': 1, 'elapsed_min': 1.2, 'buffer': 3380, 'policy_loss': 1.6847, 'value_loss': 0.1702, 'selfplay_s': 14.5, 'train_s': 1.8}
+{'iter': 2, 'elapsed_min': 1.5, 'buffer': 5184, 'policy_loss': 1.5951, 'value_loss': 0.1941, 'selfplay_s': 15.2, 'train_s': 1.9}
+{'iter': 3, 'elapsed_min': 1.7, 'buffer': 6842, 'policy_loss': 1.5385, 'value_loss': 0.1933, 'selfplay_s': 14.6, 'train_s': 1.8}
+{'iter': 4, 'elapsed_min': 2.0, 'buffer': 8316, 'policy_loss': 1.499, 'value_loss': 0.1657, 'selfplay_s': 14.2, 'train_s': 1.8}
+{'iter': 5, 'elapsed_min': 2.3, 'buffer': 9572, 'policy_loss': 1.4587, 'value_loss': 0.1764, 'selfplay_s': 13.1, 'train_s': 1.8}
+{'iter': 6, 'elapsed_min': 2.5, 'buffer': 11308, 'policy_loss': 1.4591, 'value_loss': 0.1972, 'selfplay_s': 14.4, 'train_s': 1.8}
+{'iter': 7, 'elapsed_min': 2.8, 'buffer': 12998, 'policy_loss': 1.449, 'value_loss': 0.1938, 'selfplay_s': 13.6, 'train_s': 1.8}
+{'iter': 8, 'elapsed_min': 3.1, 'buffer': 14730, 'policy_loss': 1.4331, 'value_loss': 0.2064, 'selfplay_s': 14.1, 'train_s': 1.8}
+{'iter': 9, 'elapsed_min': 3.3, 'buffer': 16556, 'policy_loss': 1.4335, 'value_loss': 0.2183, 'selfplay_s': 15.0, 'train_s': 1.8}
+{'iter': 10, 'elapsed_min': 3.6, 'buffer': 18376, 'policy_loss': 1.4333, 'value_loss': 0.2319, 'selfplay_s': 15.0, 'train_s': 1.8, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 0.6666666666666666, 'draw': 0.0, 'loss': 0.3333333333333333}, 'd5': {'win': 0.16666666666666666, 'draw': 0.0, 'loss': 0.8333333333333334}}}
+{'iter': 11, 'elapsed_min': 4.4, 'buffer': 20162, 'policy_loss': 1.4191, 'value_loss': 0.2118, 'selfplay_s': 15.5, 'train_s': 1.8}
+{'iter': 12, 'elapsed_min': 4.6, 'buffer': 21894, 'policy_loss': 1.421, 'value_loss': 0.2121, 'selfplay_s': 15.2, 'train_s': 1.8}
+{'iter': 13, 'elapsed_min': 28.7, 'buffer': 23704, 'policy_loss': 1.4006, 'value_loss': 0.2062, 'selfplay_s': 1063.8, 'train_s': 376.5}
+{'iter': 14, 'elapsed_min': 29.0, 'buffer': 25642, 'policy_loss': 1.4027, 'value_loss': 0.2139, 'selfplay_s': 16.4, 'train_s': 1.8}
+{'iter': 15, 'elapsed_min': 29.3, 'buffer': 27726, 'policy_loss': 1.3989, 'value_loss': 0.2103, 'selfplay_s': 16.3, 'train_s': 1.9}
+{'iter': 16, 'elapsed_min': 29.5, 'buffer': 29382, 'policy_loss': 1.3987, 'value_loss': 0.2126, 'selfplay_s': 15.0, 'train_s': 1.9}
+{'iter': 17, 'elapsed_min': 29.8, 'buffer': 31196, 'policy_loss': 1.3944, 'value_loss': 0.221, 'selfplay_s': 15.1, 'train_s': 1.9}
+{'iter': 18, 'elapsed_min': 30.2, 'buffer': 33064, 'policy_loss': 1.3963, 'value_loss': 0.2222, 'selfplay_s': 17.1, 'train_s': 2.1}
+{'iter': 19, 'elapsed_min': 30.4, 'buffer': 34914, 'policy_loss': 1.3907, 'value_loss': 0.2337, 'selfplay_s': 15.5, 'train_s': 1.9}
+{'iter': 20, 'elapsed_min': 30.7, 'buffer': 36692, 'policy_loss': 1.3907, 'value_loss': 0.2344, 'selfplay_s': 14.3, 'train_s': 1.9, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 0.3333333333333333, 'draw': 0.0, 'loss': 0.6666666666666666}}}
+{'iter': 21, 'elapsed_min': 31.7, 'buffer': 38730, 'policy_loss': 1.3958, 'value_loss': 0.2316, 'selfplay_s': 15.8, 'train_s': 1.9}
+{'iter': 22, 'elapsed_min': 32.0, 'buffer': 40570, 'policy_loss': 1.3889, 'value_loss': 0.2354, 'selfplay_s': 16.4, 'train_s': 1.9}
+{'iter': 23, 'elapsed_min': 32.3, 'buffer': 42518, 'policy_loss': 1.3813, 'value_loss': 0.2275, 'selfplay_s': 17.5, 'train_s': 1.9}
+{'iter': 24, 'elapsed_min': 32.6, 'buffer': 44576, 'policy_loss': 1.3826, 'value_loss': 0.2456, 'selfplay_s': 16.2, 'train_s': 1.9}
+{'iter': 25, 'elapsed_min': 32.9, 'buffer': 46534, 'policy_loss': 1.3809, 'value_loss': 0.244, 'selfplay_s': 15.0, 'train_s': 1.9}
+{'iter': 26, 'elapsed_min': 33.2, 'buffer': 48318, 'policy_loss': 1.3847, 'value_loss': 0.2514, 'selfplay_s': 15.0, 'train_s': 1.9}
+{'iter': 27, 'elapsed_min': 33.5, 'buffer': 50396, 'policy_loss': 1.3784, 'value_loss': 0.246, 'selfplay_s': 15.7, 'train_s': 1.9}
+{'iter': 28, 'elapsed_min': 33.8, 'buffer': 52160, 'policy_loss': 1.3722, 'value_loss': 0.2387, 'selfplay_s': 14.7, 'train_s': 2.0}
+{'iter': 29, 'elapsed_min': 92.8, 'buffer': 54134, 'policy_loss': 1.3707, 'value_loss': 0.2395, 'selfplay_s': 3541.1, 'train_s': 1.9}
+{'iter': 30, 'elapsed_min': 124.2, 'buffer': 56044, 'policy_loss': 1.371, 'value_loss': 0.2384, 'selfplay_s': 1883.6, 'train_s': 1.9, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 0.3333333333333333, 'draw': 0.0, 'loss': 0.6666666666666666}}}
+{'iter': 31, 'elapsed_min': 155.0, 'buffer': 57818, 'policy_loss': 1.3734, 'value_loss': 0.2456, 'selfplay_s': 607.6, 'train_s': 6.9}
+{'iter': 32, 'elapsed_min': 215.9, 'buffer': 59776, 'policy_loss': 1.3763, 'value_loss': 0.2431, 'selfplay_s': 2918.5, 'train_s': 733.0}
+{'iter': 33, 'elapsed_min': 221.4, 'buffer': 61538, 'policy_loss': 1.374, 'value_loss': 0.2484, 'selfplay_s': 326.0, 'train_s': 6.8}
+{'iter': 34, 'elapsed_min': 221.6, 'buffer': 63422, 'policy_loss': 1.3635, 'value_loss': 0.237, 'selfplay_s': 10.9, 'train_s': 1.9}
+{'iter': 35, 'elapsed_min': 221.8, 'buffer': 65400, 'policy_loss': 1.3662, 'value_loss': 0.2313, 'selfplay_s': 10.6, 'train_s': 1.9}
+{'iter': 36, 'elapsed_min': 233.3, 'buffer': 67218, 'policy_loss': 1.3689, 'value_loss': 0.2408, 'selfplay_s': 9.8, 'train_s': 680.2}
+{'iter': 37, 'elapsed_min': 233.5, 'buffer': 69026, 'policy_loss': 1.3708, 'value_loss': 0.2492, 'selfplay_s': 10.1, 'train_s': 1.9}
+{'iter': 38, 'elapsed_min': 233.7, 'buffer': 71146, 'policy_loss': 1.3673, 'value_loss': 0.2367, 'selfplay_s': 10.4, 'train_s': 1.9}
+{'iter': 39, 'elapsed_min': 233.9, 'buffer': 73178, 'policy_loss': 1.3694, 'value_loss': 0.2496, 'selfplay_s': 10.1, 'train_s': 1.9}
+{'iter': 40, 'elapsed_min': 249.1, 'buffer': 75176, 'policy_loss': 1.3697, 'value_loss': 0.248, 'selfplay_s': 908.4, 'train_s': 1.9, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 0.8333333333333334, 'draw': 0.16666666666666666, 'loss': 0.0}, 'd5': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}}}
+{'iter': 41, 'elapsed_min': 249.7, 'buffer': 77110, 'policy_loss': 1.3677, 'value_loss': 0.2527, 'selfplay_s': 9.8, 'train_s': 1.9}
+{'iter': 42, 'elapsed_min': 249.9, 'buffer': 79406, 'policy_loss': 1.3697, 'value_loss': 0.2502, 'selfplay_s': 10.3, 'train_s': 1.9}
+{'iter': 43, 'elapsed_min': 265.1, 'buffer': 81546, 'policy_loss': 1.3662, 'value_loss': 0.2486, 'selfplay_s': 910.3, 'train_s': 1.9}
+{'iter': 44, 'elapsed_min': 265.3, 'buffer': 83476, 'policy_loss': 1.3565, 'value_loss': 0.2535, 'selfplay_s': 10.9, 'train_s': 1.9}
+{'iter': 45, 'elapsed_min': 265.6, 'buffer': 85686, 'policy_loss': 1.3649, 'value_loss': 0.255, 'selfplay_s': 10.6, 'train_s': 1.9}
+{'iter': 46, 'elapsed_min': 265.8, 'buffer': 87682, 'policy_loss': 1.3683, 'value_loss': 0.2497, 'selfplay_s': 10.2, 'train_s': 1.9}
+{'iter': 47, 'elapsed_min': 266.0, 'buffer': 89654, 'policy_loss': 1.3628, 'value_loss': 0.2479, 'selfplay_s': 11.2, 'train_s': 1.9}
+{'iter': 48, 'elapsed_min': 266.2, 'buffer': 91654, 'policy_loss': 1.3686, 'value_loss': 0.2548, 'selfplay_s': 10.4, 'train_s': 1.9}
+{'iter': 49, 'elapsed_min': 266.4, 'buffer': 93768, 'policy_loss': 1.3637, 'value_loss': 0.2579, 'selfplay_s': 10.3, 'train_s': 1.9}
+{'iter': 50, 'elapsed_min': 266.6, 'buffer': 96046, 'policy_loss': 1.3721, 'value_loss': 0.2566, 'selfplay_s': 10.7, 'train_s': 1.9, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 0.5, 'draw': 0.16666666666666666, 'loss': 0.3333333333333333}}}
+{'iter': 51, 'elapsed_min': 267.2, 'buffer': 98280, 'policy_loss': 1.3669, 'value_loss': 0.2514, 'selfplay_s': 10.4, 'train_s': 1.9}
+{'iter': 52, 'elapsed_min': 267.4, 'buffer': 100300, 'policy_loss': 1.3685, 'value_loss': 0.2469, 'selfplay_s': 10.0, 'train_s': 2.0}
+{'iter': 53, 'elapsed_min': 267.6, 'buffer': 102402, 'policy_loss': 1.3702, 'value_loss': 0.255, 'selfplay_s': 10.8, 'train_s': 1.9}
+{'iter': 54, 'elapsed_min': 267.9, 'buffer': 104558, 'policy_loss': 1.3672, 'value_loss': 0.2612, 'selfplay_s': 10.8, 'train_s': 2.0}
+{'iter': 55, 'elapsed_min': 268.1, 'buffer': 106662, 'policy_loss': 1.3684, 'value_loss': 0.256, 'selfplay_s': 10.8, 'train_s': 2.0}
+{'iter': 56, 'elapsed_min': 268.3, 'buffer': 108832, 'policy_loss': 1.3678, 'value_loss': 0.259, 'selfplay_s': 10.9, 'train_s': 2.0}
+{'iter': 57, 'elapsed_min': 268.5, 'buffer': 111086, 'policy_loss': 1.3629, 'value_loss': 0.2589, 'selfplay_s': 11.3, 'train_s': 2.0}
+{'iter': 58, 'elapsed_min': 268.7, 'buffer': 113240, 'policy_loss': 1.367, 'value_loss': 0.2559, 'selfplay_s': 10.9, 'train_s': 2.0}
+{'iter': 59, 'elapsed_min': 268.9, 'buffer': 115196, 'policy_loss': 1.3642, 'value_loss': 0.2645, 'selfplay_s': 10.3, 'train_s': 2.0}
+{'iter': 60, 'elapsed_min': 269.1, 'buffer': 117328, 'policy_loss': 1.3637, 'value_loss': 0.2606, 'selfplay_s': 10.8, 'train_s': 2.0, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 0.8333333333333334, 'draw': 0.16666666666666666, 'loss': 0.0}, 'd5': {'win': 0.5, 'draw': 0.16666666666666666, 'loss': 0.3333333333333333}}}
+{'iter': 61, 'elapsed_min': 269.8, 'buffer': 119496, 'policy_loss': 1.3684, 'value_loss': 0.258, 'selfplay_s': 10.5, 'train_s': 2.0}
+{'iter': 62, 'elapsed_min': 270.0, 'buffer': 121246, 'policy_loss': 1.3625, 'value_loss': 0.2561, 'selfplay_s': 10.0, 'train_s': 2.0}
+{'iter': 63, 'elapsed_min': 270.2, 'buffer': 123392, 'policy_loss': 1.3642, 'value_loss': 0.2618, 'selfplay_s': 11.0, 'train_s': 2.0}
+{'iter': 64, 'elapsed_min': 270.4, 'buffer': 125630, 'policy_loss': 1.3653, 'value_loss': 0.2628, 'selfplay_s': 10.5, 'train_s': 2.0}
+{'iter': 65, 'elapsed_min': 270.6, 'buffer': 127744, 'policy_loss': 1.3668, 'value_loss': 0.2696, 'selfplay_s': 10.7, 'train_s': 2.1}
+{'iter': 66, 'elapsed_min': 270.8, 'buffer': 129668, 'policy_loss': 1.3657, 'value_loss': 0.2732, 'selfplay_s': 10.4, 'train_s': 2.1}
+{'iter': 67, 'elapsed_min': 271.0, 'buffer': 131866, 'policy_loss': 1.3632, 'value_loss': 0.2619, 'selfplay_s': 11.3, 'train_s': 2.1}
+{'iter': 68, 'elapsed_min': 271.2, 'buffer': 134226, 'policy_loss': 1.3662, 'value_loss': 0.2734, 'selfplay_s': 11.1, 'train_s': 2.1}
+{'iter': 69, 'elapsed_min': 271.5, 'buffer': 136520, 'policy_loss': 1.3647, 'value_loss': 0.269, 'selfplay_s': 10.9, 'train_s': 2.1}
+{'iter': 70, 'elapsed_min': 271.7, 'buffer': 138790, 'policy_loss': 1.3582, 'value_loss': 0.2697, 'selfplay_s': 11.1, 'train_s': 2.1, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 0.6666666666666666, 'draw': 0.16666666666666666, 'loss': 0.16666666666666666}, 'd5': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}}}
+{'iter': 71, 'elapsed_min': 272.3, 'buffer': 141022, 'policy_loss': 1.3613, 'value_loss': 0.2753, 'selfplay_s': 11.4, 'train_s': 2.1}
+{'iter': 72, 'elapsed_min': 272.5, 'buffer': 143364, 'policy_loss': 1.3643, 'value_loss': 0.2696, 'selfplay_s': 11.4, 'train_s': 2.1}
+{'iter': 73, 'elapsed_min': 272.7, 'buffer': 145618, 'policy_loss': 1.3621, 'value_loss': 0.2776, 'selfplay_s': 11.1, 'train_s': 2.1}
+{'iter': 74, 'elapsed_min': 273.0, 'buffer': 147950, 'policy_loss': 1.359, 'value_loss': 0.2749, 'selfplay_s': 11.7, 'train_s': 2.1}
+{'iter': 75, 'elapsed_min': 273.2, 'buffer': 150206, 'policy_loss': 1.3621, 'value_loss': 0.2663, 'selfplay_s': 11.6, 'train_s': 2.1}
+{'iter': 76, 'elapsed_min': 273.4, 'buffer': 152570, 'policy_loss': 1.355, 'value_loss': 0.278, 'selfplay_s': 11.5, 'train_s': 2.1}
+{'iter': 77, 'elapsed_min': 273.6, 'buffer': 155004, 'policy_loss': 1.3546, 'value_loss': 0.2751, 'selfplay_s': 11.7, 'train_s': 2.1}
+{'iter': 78, 'elapsed_min': 273.9, 'buffer': 157338, 'policy_loss': 1.3518, 'value_loss': 0.2765, 'selfplay_s': 11.7, 'train_s': 2.1}
+{'iter': 79, 'elapsed_min': 274.1, 'buffer': 159586, 'policy_loss': 1.3557, 'value_loss': 0.2778, 'selfplay_s': 11.5, 'train_s': 2.2}
+{'iter': 80, 'elapsed_min': 274.3, 'buffer': 161966, 'policy_loss': 1.3497, 'value_loss': 0.2796, 'selfplay_s': 11.1, 'train_s': 2.2, 'eval': {'d1': {'win': 0.8333333333333334, 'draw': 0.0, 'loss': 0.16666666666666666}, 'd3': {'win': 0.8333333333333334, 'draw': 0.16666666666666666, 'loss': 0.0}, 'd5': {'win': 0.6666666666666666, 'draw': 0.0, 'loss': 0.3333333333333333}}}
+{'iter': 81, 'elapsed_min': 275.0, 'buffer': 164000, 'policy_loss': 1.355, 'value_loss': 0.282, 'selfplay_s': 10.7, 'train_s': 2.1}
+{'iter': 82, 'elapsed_min': 275.2, 'buffer': 166386, 'policy_loss': 1.3578, 'value_loss': 0.292, 'selfplay_s': 11.3, 'train_s': 2.2}
+{'iter': 83, 'elapsed_min': 275.4, 'buffer': 168746, 'policy_loss': 1.3541, 'value_loss': 0.2822, 'selfplay_s': 11.2, 'train_s': 2.2}
+{'iter': 84, 'elapsed_min': 277.0, 'buffer': 171038, 'policy_loss': 1.3556, 'value_loss': 0.2872, 'selfplay_s': 91.5, 'train_s': 2.2}
+{'iter': 85, 'elapsed_min': 277.2, 'buffer': 173064, 'policy_loss': 1.3487, 'value_loss': 0.2869, 'selfplay_s': 10.4, 'train_s': 2.2}
+{'iter': 86, 'elapsed_min': 277.4, 'buffer': 175258, 'policy_loss': 1.3514, 'value_loss': 0.2842, 'selfplay_s': 11.0, 'train_s': 2.2}
+{'iter': 87, 'elapsed_min': 292.7, 'buffer': 177712, 'policy_loss': 1.3496, 'value_loss': 0.2889, 'selfplay_s': 11.4, 'train_s': 901.4}
+{'iter': 88, 'elapsed_min': 292.9, 'buffer': 180124, 'policy_loss': 1.3475, 'value_loss': 0.2886, 'selfplay_s': 10.8, 'train_s': 2.2}
+{'iter': 89, 'elapsed_min': 293.1, 'buffer': 182434, 'policy_loss': 1.354, 'value_loss': 0.2877, 'selfplay_s': 10.6, 'train_s': 2.2}
+{'iter': 90, 'elapsed_min': 293.3, 'buffer': 184754, 'policy_loss': 1.3495, 'value_loss': 0.279, 'selfplay_s': 11.2, 'train_s': 2.2, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 0.5, 'draw': 0.16666666666666666, 'loss': 0.3333333333333333}}}
+{'iter': 91, 'elapsed_min': 294.1, 'buffer': 187070, 'policy_loss': 1.3455, 'value_loss': 0.2854, 'selfplay_s': 11.3, 'train_s': 2.2}
+{'iter': 92, 'elapsed_min': 294.3, 'buffer': 189226, 'policy_loss': 1.3437, 'value_loss': 0.293, 'selfplay_s': 10.9, 'train_s': 2.2}
+{'iter': 93, 'elapsed_min': 309.5, 'buffer': 191498, 'policy_loss': 1.3515, 'value_loss': 0.2872, 'selfplay_s': 910.2, 'train_s': 2.2}
+{'iter': 94, 'elapsed_min': 309.8, 'buffer': 193648, 'policy_loss': 1.3455, 'value_loss': 0.2947, 'selfplay_s': 10.9, 'train_s': 2.2}
+{'iter': 95, 'elapsed_min': 310.0, 'buffer': 196056, 'policy_loss': 1.3404, 'value_loss': 0.2911, 'selfplay_s': 11.4, 'train_s': 2.2}
+{'iter': 96, 'elapsed_min': 310.2, 'buffer': 198480, 'policy_loss': 1.3477, 'value_loss': 0.2865, 'selfplay_s': 10.7, 'train_s': 2.3}
+{'iter': 97, 'elapsed_min': 325.4, 'buffer': 200626, 'policy_loss': 1.3462, 'value_loss': 0.2987, 'selfplay_s': 10.2, 'train_s': 901.8}
+{'iter': 98, 'elapsed_min': 325.6, 'buffer': 203112, 'policy_loss': 1.3448, 'value_loss': 0.2975, 'selfplay_s': 10.8, 'train_s': 2.3}
+{'iter': 99, 'elapsed_min': 325.8, 'buffer': 205154, 'policy_loss': 1.3436, 'value_loss': 0.2993, 'selfplay_s': 10.8, 'train_s': 2.3}
+{'iter': 100, 'elapsed_min': 326.1, 'buffer': 207364, 'policy_loss': 1.345, 'value_loss': 0.2923, 'selfplay_s': 10.8, 'train_s': 2.3, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}}}
+{'iter': 101, 'elapsed_min': 338.4, 'buffer': 209758, 'policy_loss': 1.3517, 'value_loss': 0.2998, 'selfplay_s': 10.9, 'train_s': 2.3}
+{'iter': 102, 'elapsed_min': 353.8, 'buffer': 212174, 'policy_loss': 1.3418, 'value_loss': 0.2991, 'selfplay_s': 11.6, 'train_s': 912.5}
+{'iter': 103, 'elapsed_min': 354.1, 'buffer': 214204, 'policy_loss': 1.3335, 'value_loss': 0.299, 'selfplay_s': 10.8, 'train_s': 2.3}
+{'iter': 104, 'elapsed_min': 354.3, 'buffer': 216456, 'policy_loss': 1.3415, 'value_loss': 0.2961, 'selfplay_s': 10.6, 'train_s': 2.3}
+{'iter': 105, 'elapsed_min': 354.5, 'buffer': 218524, 'policy_loss': 1.3389, 'value_loss': 0.2936, 'selfplay_s': 10.2, 'train_s': 2.3}
+{'iter': 106, 'elapsed_min': 354.7, 'buffer': 220728, 'policy_loss': 1.3432, 'value_loss': 0.2977, 'selfplay_s': 10.8, 'train_s': 2.3}
+{'iter': 107, 'elapsed_min': 354.9, 'buffer': 223304, 'policy_loss': 1.3373, 'value_loss': 0.297, 'selfplay_s': 10.8, 'train_s': 2.3}
+{'iter': 108, 'elapsed_min': 355.1, 'buffer': 225360, 'policy_loss': 1.342, 'value_loss': 0.2913, 'selfplay_s': 10.7, 'train_s': 2.3}
+{'iter': 109, 'elapsed_min': 355.4, 'buffer': 227904, 'policy_loss': 1.336, 'value_loss': 0.3015, 'selfplay_s': 11.1, 'train_s': 2.3}
+{'iter': 110, 'elapsed_min': 355.6, 'buffer': 230272, 'policy_loss': 1.3401, 'value_loss': 0.2954, 'selfplay_s': 11.1, 'train_s': 2.3, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 0.8333333333333334, 'draw': 0.0, 'loss': 0.16666666666666666}}}
+{'iter': 111, 'elapsed_min': 356.2, 'buffer': 232184, 'policy_loss': 1.3404, 'value_loss': 0.2977, 'selfplay_s': 9.9, 'train_s': 2.3}
+{'iter': 112, 'elapsed_min': 356.4, 'buffer': 234530, 'policy_loss': 1.3378, 'value_loss': 0.2957, 'selfplay_s': 10.8, 'train_s': 2.3}
+{'iter': 113, 'elapsed_min': 356.6, 'buffer': 236910, 'policy_loss': 1.3386, 'value_loss': 0.2985, 'selfplay_s': 10.9, 'train_s': 2.3}
+{'iter': 114, 'elapsed_min': 356.9, 'buffer': 239214, 'policy_loss': 1.3385, 'value_loss': 0.3012, 'selfplay_s': 11.4, 'train_s': 2.3}
+{'iter': 115, 'elapsed_min': 357.1, 'buffer': 241350, 'policy_loss': 1.3347, 'value_loss': 0.3041, 'selfplay_s': 10.7, 'train_s': 2.3}
+{'iter': 116, 'elapsed_min': 357.3, 'buffer': 243786, 'policy_loss': 1.3382, 'value_loss': 0.3018, 'selfplay_s': 11.1, 'train_s': 2.3}
+{'iter': 117, 'elapsed_min': 357.5, 'buffer': 245974, 'policy_loss': 1.3324, 'value_loss': 0.3068, 'selfplay_s': 11.1, 'train_s': 2.3}
+{'iter': 118, 'elapsed_min': 357.8, 'buffer': 248278, 'policy_loss': 1.3395, 'value_loss': 0.3059, 'selfplay_s': 11.3, 'train_s': 2.3}
+{'iter': 119, 'elapsed_min': 358.0, 'buffer': 250926, 'policy_loss': 1.3327, 'value_loss': 0.3007, 'selfplay_s': 11.7, 'train_s': 2.4}
+{'iter': 120, 'elapsed_min': 358.2, 'buffer': 253626, 'policy_loss': 1.3302, 'value_loss': 0.3032, 'selfplay_s': 12.0, 'train_s': 2.4, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}}}
+{'iter': 121, 'elapsed_min': 358.9, 'buffer': 255938, 'policy_loss': 1.3324, 'value_loss': 0.3019, 'selfplay_s': 11.2, 'train_s': 2.4}
+{'iter': 122, 'elapsed_min': 359.1, 'buffer': 258306, 'policy_loss': 1.3306, 'value_loss': 0.3061, 'selfplay_s': 11.0, 'train_s': 2.4}
+{'iter': 123, 'elapsed_min': 359.3, 'buffer': 260906, 'policy_loss': 1.3333, 'value_loss': 0.3043, 'selfplay_s': 11.6, 'train_s': 2.4}
+{'iter': 124, 'elapsed_min': 359.5, 'buffer': 263044, 'policy_loss': 1.3289, 'value_loss': 0.3056, 'selfplay_s': 10.8, 'train_s': 2.4}
+{'iter': 125, 'elapsed_min': 359.8, 'buffer': 265422, 'policy_loss': 1.3322, 'value_loss': 0.2962, 'selfplay_s': 11.2, 'train_s': 2.4}
+{'iter': 126, 'elapsed_min': 375.8, 'buffer': 268006, 'policy_loss': 1.3321, 'value_loss': 0.301, 'selfplay_s': 11.6, 'train_s': 950.9}
+{'iter': 127, 'elapsed_min': 376.0, 'buffer': 270342, 'policy_loss': 1.3279, 'value_loss': 0.3043, 'selfplay_s': 11.0, 'train_s': 2.4}
+{'iter': 128, 'elapsed_min': 376.3, 'buffer': 272802, 'policy_loss': 1.327, 'value_loss': 0.3065, 'selfplay_s': 11.3, 'train_s': 2.4}
+{'iter': 129, 'elapsed_min': 376.5, 'buffer': 275210, 'policy_loss': 1.3304, 'value_loss': 0.3033, 'selfplay_s': 11.5, 'train_s': 2.4}
+{'iter': 130, 'elapsed_min': 392.1, 'buffer': 277626, 'policy_loss': 1.3262, 'value_loss': 0.3079, 'selfplay_s': 931.4, 'train_s': 2.4, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 0.8333333333333334, 'draw': 0.16666666666666666, 'loss': 0.0}, 'd5': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}}}
+{'iter': 131, 'elapsed_min': 392.6, 'buffer': 280018, 'policy_loss': 1.3265, 'value_loss': 0.298, 'selfplay_s': 11.5, 'train_s': 2.4}
+{'iter': 132, 'elapsed_min': 392.9, 'buffer': 282244, 'policy_loss': 1.3267, 'value_loss': 0.2987, 'selfplay_s': 10.9, 'train_s': 2.4}
+{'iter': 133, 'elapsed_min': 393.1, 'buffer': 284834, 'policy_loss': 1.3276, 'value_loss': 0.301, 'selfplay_s': 11.5, 'train_s': 2.4}
+{'iter': 134, 'elapsed_min': 393.3, 'buffer': 287106, 'policy_loss': 1.3257, 'value_loss': 0.3165, 'selfplay_s': 11.2, 'train_s': 2.4}
+{'iter': 135, 'elapsed_min': 399.0, 'buffer': 289706, 'policy_loss': 1.3224, 'value_loss': 0.3067, 'selfplay_s': 339.8, 'train_s': 2.5}
+{'iter': 136, 'elapsed_min': 399.2, 'buffer': 292062, 'policy_loss': 1.3275, 'value_loss': 0.31, 'selfplay_s': 11.1, 'train_s': 2.5}
+{'iter': 137, 'elapsed_min': 399.5, 'buffer': 294280, 'policy_loss': 1.3251, 'value_loss': 0.3072, 'selfplay_s': 10.7, 'train_s': 2.5}
+{'iter': 138, 'elapsed_min': 399.7, 'buffer': 296522, 'policy_loss': 1.3213, 'value_loss': 0.3088, 'selfplay_s': 10.8, 'train_s': 2.5}
+{'iter': 139, 'elapsed_min': 417.6, 'buffer': 299034, 'policy_loss': 1.3234, 'value_loss': 0.3102, 'selfplay_s': 1071.9, 'train_s': 2.5}
+{'iter': 140, 'elapsed_min': 417.8, 'buffer': 300000, 'policy_loss': 1.3172, 'value_loss': 0.3131, 'selfplay_s': 11.4, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 0.6666666666666666, 'draw': 0.0, 'loss': 0.3333333333333333}}}
+{'iter': 141, 'elapsed_min': 435.9, 'buffer': 300000, 'policy_loss': 1.316, 'value_loss': 0.319, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 142, 'elapsed_min': 436.1, 'buffer': 300000, 'policy_loss': 1.3067, 'value_loss': 0.3027, 'selfplay_s': 11.1, 'train_s': 2.5}
+{'iter': 143, 'elapsed_min': 436.3, 'buffer': 300000, 'policy_loss': 1.3093, 'value_loss': 0.312, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 144, 'elapsed_min': 452.1, 'buffer': 300000, 'policy_loss': 1.3055, 'value_loss': 0.3069, 'selfplay_s': 946.4, 'train_s': 2.5}
+{'iter': 145, 'elapsed_min': 452.4, 'buffer': 300000, 'policy_loss': 1.2984, 'value_loss': 0.3115, 'selfplay_s': 11.1, 'train_s': 2.5}
+{'iter': 146, 'elapsed_min': 452.6, 'buffer': 300000, 'policy_loss': 1.3014, 'value_loss': 0.3124, 'selfplay_s': 11.1, 'train_s': 2.5}
+{'iter': 147, 'elapsed_min': 460.0, 'buffer': 300000, 'policy_loss': 1.2949, 'value_loss': 0.3168, 'selfplay_s': 440.6, 'train_s': 2.5}
+{'iter': 148, 'elapsed_min': 460.2, 'buffer': 300000, 'policy_loss': 1.2949, 'value_loss': 0.3119, 'selfplay_s': 11.2, 'train_s': 2.5}
+{'iter': 149, 'elapsed_min': 460.4, 'buffer': 300000, 'policy_loss': 1.2911, 'value_loss': 0.3143, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 150, 'elapsed_min': 460.7, 'buffer': 300000, 'policy_loss': 1.2881, 'value_loss': 0.3093, 'selfplay_s': 11.2, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 0.6666666666666666, 'draw': 0.16666666666666666, 'loss': 0.16666666666666666}}}
+{'iter': 151, 'elapsed_min': 477.3, 'buffer': 300000, 'policy_loss': 1.2897, 'value_loss': 0.3071, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 152, 'elapsed_min': 477.5, 'buffer': 300000, 'policy_loss': 1.2843, 'value_loss': 0.3099, 'selfplay_s': 10.7, 'train_s': 2.5}
+{'iter': 153, 'elapsed_min': 477.7, 'buffer': 300000, 'policy_loss': 1.2841, 'value_loss': 0.3118, 'selfplay_s': 10.8, 'train_s': 2.5}
+{'iter': 154, 'elapsed_min': 493.7, 'buffer': 300000, 'policy_loss': 1.2763, 'value_loss': 0.3029, 'selfplay_s': 11.2, 'train_s': 945.8}
+{'iter': 155, 'elapsed_min': 493.9, 'buffer': 300000, 'policy_loss': 1.2826, 'value_loss': 0.309, 'selfplay_s': 10.7, 'train_s': 2.5}
+{'iter': 156, 'elapsed_min': 494.1, 'buffer': 300000, 'policy_loss': 1.287, 'value_loss': 0.3075, 'selfplay_s': 11.2, 'train_s': 2.5}
+{'iter': 157, 'elapsed_min': 494.3, 'buffer': 300000, 'policy_loss': 1.2793, 'value_loss': 0.309, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 158, 'elapsed_min': 510.4, 'buffer': 300000, 'policy_loss': 1.2766, 'value_loss': 0.3127, 'selfplay_s': 960.3, 'train_s': 2.5}
+{'iter': 159, 'elapsed_min': 510.6, 'buffer': 300000, 'policy_loss': 1.2716, 'value_loss': 0.3094, 'selfplay_s': 11.0, 'train_s': 2.5}
+{'iter': 160, 'elapsed_min': 510.8, 'buffer': 300000, 'policy_loss': 1.2771, 'value_loss': 0.3099, 'selfplay_s': 11.3, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 0.8333333333333334, 'draw': 0.16666666666666666, 'loss': 0.0}, 'd5': {'win': 0.5, 'draw': 0.0, 'loss': 0.5}}}
+{'iter': 161, 'elapsed_min': 521.4, 'buffer': 300000, 'policy_loss': 1.2707, 'value_loss': 0.3105, 'selfplay_s': 10.7, 'train_s': 2.5}
+{'iter': 162, 'elapsed_min': 521.6, 'buffer': 300000, 'policy_loss': 1.2718, 'value_loss': 0.313, 'selfplay_s': 11.5, 'train_s': 2.5}
+{'iter': 163, 'elapsed_min': 538.3, 'buffer': 300000, 'policy_loss': 1.2625, 'value_loss': 0.3053, 'selfplay_s': 1000.8, 'train_s': 2.5}
+{'iter': 164, 'elapsed_min': 538.5, 'buffer': 300000, 'policy_loss': 1.2725, 'value_loss': 0.3074, 'selfplay_s': 11.2, 'train_s': 2.5}
+{'iter': 165, 'elapsed_min': 538.8, 'buffer': 300000, 'policy_loss': 1.2636, 'value_loss': 0.311, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 166, 'elapsed_min': 539.0, 'buffer': 300000, 'policy_loss': 1.2679, 'value_loss': 0.3079, 'selfplay_s': 11.5, 'train_s': 2.5}
+{'iter': 167, 'elapsed_min': 539.2, 'buffer': 300000, 'policy_loss': 1.2624, 'value_loss': 0.3094, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 168, 'elapsed_min': 554.5, 'buffer': 300000, 'policy_loss': 1.2632, 'value_loss': 0.3083, 'selfplay_s': 913.1, 'train_s': 2.5}
+{'iter': 169, 'elapsed_min': 554.7, 'buffer': 300000, 'policy_loss': 1.2549, 'value_loss': 0.3045, 'selfplay_s': 11.2, 'train_s': 2.5}
+{'iter': 170, 'elapsed_min': 555.0, 'buffer': 300000, 'policy_loss': 1.2644, 'value_loss': 0.3103, 'selfplay_s': 10.9, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 0.8333333333333334, 'draw': 0.0, 'loss': 0.16666666666666666}, 'd5': {'win': 0.8333333333333334, 'draw': 0.0, 'loss': 0.16666666666666666}}}
+{'iter': 171, 'elapsed_min': 570.7, 'buffer': 300000, 'policy_loss': 1.2623, 'value_loss': 0.3074, 'selfplay_s': 10.8, 'train_s': 2.5}
+{'iter': 172, 'elapsed_min': 570.9, 'buffer': 300000, 'policy_loss': 1.2608, 'value_loss': 0.3044, 'selfplay_s': 11.1, 'train_s': 2.5}
+{'iter': 173, 'elapsed_min': 582.0, 'buffer': 300000, 'policy_loss': 1.2613, 'value_loss': 0.3073, 'selfplay_s': 11.1, 'train_s': 650.7}
+{'iter': 174, 'elapsed_min': 582.2, 'buffer': 300000, 'policy_loss': 1.2539, 'value_loss': 0.3058, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 175, 'elapsed_min': 582.4, 'buffer': 300000, 'policy_loss': 1.258, 'value_loss': 0.3047, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 176, 'elapsed_min': 582.6, 'buffer': 300000, 'policy_loss': 1.2538, 'value_loss': 0.3065, 'selfplay_s': 11.1, 'train_s': 2.5}
+{'iter': 177, 'elapsed_min': 585.9, 'buffer': 300000, 'policy_loss': 1.2501, 'value_loss': 0.3012, 'selfplay_s': 193.8, 'train_s': 2.5}
+{'iter': 178, 'elapsed_min': 586.1, 'buffer': 300000, 'policy_loss': 1.2486, 'value_loss': 0.3, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 179, 'elapsed_min': 586.4, 'buffer': 300000, 'policy_loss': 1.2432, 'value_loss': 0.3007, 'selfplay_s': 10.3, 'train_s': 2.5}
+{'iter': 180, 'elapsed_min': 602.8, 'buffer': 300000, 'policy_loss': 1.2525, 'value_loss': 0.3003, 'selfplay_s': 11.4, 'train_s': 973.1, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 0.6666666666666666, 'draw': 0.16666666666666666, 'loss': 0.16666666666666666}}}
+{'iter': 181, 'elapsed_min': 603.4, 'buffer': 300000, 'policy_loss': 1.252, 'value_loss': 0.3026, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 182, 'elapsed_min': 619.7, 'buffer': 300000, 'policy_loss': 1.2387, 'value_loss': 0.3027, 'selfplay_s': 973.9, 'train_s': 2.5}
+{'iter': 183, 'elapsed_min': 619.9, 'buffer': 300000, 'policy_loss': 1.2389, 'value_loss': 0.3002, 'selfplay_s': 11.6, 'train_s': 2.5}
+{'iter': 184, 'elapsed_min': 620.2, 'buffer': 300000, 'policy_loss': 1.234, 'value_loss': 0.3034, 'selfplay_s': 12.0, 'train_s': 2.5}
+{'iter': 185, 'elapsed_min': 637.3, 'buffer': 300000, 'policy_loss': 1.2419, 'value_loss': 0.2959, 'selfplay_s': 1022.5, 'train_s': 2.5}
+{'iter': 186, 'elapsed_min': 637.5, 'buffer': 300000, 'policy_loss': 1.2359, 'value_loss': 0.3032, 'selfplay_s': 11.2, 'train_s': 2.5}
+{'iter': 187, 'elapsed_min': 637.7, 'buffer': 300000, 'policy_loss': 1.2355, 'value_loss': 0.3008, 'selfplay_s': 11.6, 'train_s': 2.5}
+{'iter': 188, 'elapsed_min': 637.9, 'buffer': 300000, 'policy_loss': 1.2324, 'value_loss': 0.2977, 'selfplay_s': 11.0, 'train_s': 2.5}
+{'iter': 189, 'elapsed_min': 643.2, 'buffer': 300000, 'policy_loss': 1.2324, 'value_loss': 0.3008, 'selfplay_s': 311.6, 'train_s': 2.5}
+{'iter': 190, 'elapsed_min': 643.4, 'buffer': 300000, 'policy_loss': 1.2327, 'value_loss': 0.3056, 'selfplay_s': 11.7, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 0.8333333333333334, 'draw': 0.0, 'loss': 0.16666666666666666}}}
+{'iter': 191, 'elapsed_min': 644.0, 'buffer': 300000, 'policy_loss': 1.2325, 'value_loss': 0.2949, 'selfplay_s': 12.0, 'train_s': 2.5}
+{'iter': 192, 'elapsed_min': 660.1, 'buffer': 300000, 'policy_loss': 1.2301, 'value_loss': 0.2972, 'selfplay_s': 964.5, 'train_s': 2.5}
+{'iter': 193, 'elapsed_min': 660.4, 'buffer': 300000, 'policy_loss': 1.2216, 'value_loss': 0.3047, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 194, 'elapsed_min': 660.6, 'buffer': 300000, 'policy_loss': 1.2298, 'value_loss': 0.2963, 'selfplay_s': 11.2, 'train_s': 2.5}
+{'iter': 195, 'elapsed_min': 676.6, 'buffer': 300000, 'policy_loss': 1.2227, 'value_loss': 0.2947, 'selfplay_s': 11.7, 'train_s': 950.6}
+{'iter': 196, 'elapsed_min': 676.9, 'buffer': 300000, 'policy_loss': 1.2285, 'value_loss': 0.3021, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 197, 'elapsed_min': 677.1, 'buffer': 300000, 'policy_loss': 1.2249, 'value_loss': 0.3001, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 198, 'elapsed_min': 677.3, 'buffer': 300000, 'policy_loss': 1.222, 'value_loss': 0.2952, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 199, 'elapsed_min': 692.9, 'buffer': 300000, 'policy_loss': 1.2212, 'value_loss': 0.2914, 'selfplay_s': 930.0, 'train_s': 2.5}
+{'iter': 200, 'elapsed_min': 693.1, 'buffer': 300000, 'policy_loss': 1.2189, 'value_loss': 0.298, 'selfplay_s': 11.5, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 0.8333333333333334, 'draw': 0.0, 'loss': 0.16666666666666666}}}
+{'iter': 201, 'elapsed_min': 704.2, 'buffer': 300000, 'policy_loss': 1.2247, 'value_loss': 0.2946, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 202, 'elapsed_min': 704.5, 'buffer': 300000, 'policy_loss': 1.2188, 'value_loss': 0.2942, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 203, 'elapsed_min': 704.7, 'buffer': 300000, 'policy_loss': 1.2221, 'value_loss': 0.299, 'selfplay_s': 11.5, 'train_s': 2.5}
+{'iter': 204, 'elapsed_min': 704.9, 'buffer': 300000, 'policy_loss': 1.2162, 'value_loss': 0.3012, 'selfplay_s': 10.9, 'train_s': 2.5}
+{'iter': 205, 'elapsed_min': 705.1, 'buffer': 300000, 'policy_loss': 1.2172, 'value_loss': 0.2903, 'selfplay_s': 11.1, 'train_s': 2.5}
+{'iter': 206, 'elapsed_min': 721.6, 'buffer': 300000, 'policy_loss': 1.2192, 'value_loss': 0.2965, 'selfplay_s': 983.2, 'train_s': 2.5}
+{'iter': 207, 'elapsed_min': 721.8, 'buffer': 300000, 'policy_loss': 1.2173, 'value_loss': 0.298, 'selfplay_s': 11.1, 'train_s': 2.5}
+{'iter': 208, 'elapsed_min': 722.0, 'buffer': 300000, 'policy_loss': 1.2194, 'value_loss': 0.292, 'selfplay_s': 11.5, 'train_s': 2.5}
+{'iter': 209, 'elapsed_min': 722.4, 'buffer': 300000, 'policy_loss': 1.2188, 'value_loss': 0.2941, 'selfplay_s': 21.9, 'train_s': 2.5}
+{'iter': 210, 'elapsed_min': 722.7, 'buffer': 300000, 'policy_loss': 1.2069, 'value_loss': 0.2955, 'selfplay_s': 11.6, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}}}
+{'iter': 211, 'elapsed_min': 727.7, 'buffer': 300000, 'policy_loss': 1.2138, 'value_loss': 0.2971, 'selfplay_s': 274.9, 'train_s': 2.5}
+{'iter': 212, 'elapsed_min': 727.9, 'buffer': 300000, 'policy_loss': 1.2176, 'value_loss': 0.2963, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 213, 'elapsed_min': 728.2, 'buffer': 300000, 'policy_loss': 1.212, 'value_loss': 0.2875, 'selfplay_s': 11.2, 'train_s': 2.5}
+{'iter': 214, 'elapsed_min': 733.3, 'buffer': 300000, 'policy_loss': 1.2103, 'value_loss': 0.2856, 'selfplay_s': 304.4, 'train_s': 2.5}
+{'iter': 215, 'elapsed_min': 733.5, 'buffer': 300000, 'policy_loss': 1.2065, 'value_loss': 0.2891, 'selfplay_s': 11.2, 'train_s': 2.5}
+{'iter': 216, 'elapsed_min': 733.8, 'buffer': 300000, 'policy_loss': 1.2104, 'value_loss': 0.284, 'selfplay_s': 11.9, 'train_s': 2.5}
+{'iter': 217, 'elapsed_min': 749.2, 'buffer': 300000, 'policy_loss': 1.2086, 'value_loss': 0.2836, 'selfplay_s': 923.5, 'train_s': 2.5}
+{'iter': 218, 'elapsed_min': 749.4, 'buffer': 300000, 'policy_loss': 1.2053, 'value_loss': 0.2849, 'selfplay_s': 11.8, 'train_s': 2.5}
+{'iter': 219, 'elapsed_min': 749.7, 'buffer': 300000, 'policy_loss': 1.2075, 'value_loss': 0.2867, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 220, 'elapsed_min': 749.9, 'buffer': 300000, 'policy_loss': 1.2035, 'value_loss': 0.2851, 'selfplay_s': 12.1, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 0.8333333333333334, 'draw': 0.0, 'loss': 0.16666666666666666}, 'd5': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}}}
+{'iter': 221, 'elapsed_min': 765.5, 'buffer': 300000, 'policy_loss': 1.2028, 'value_loss': 0.2818, 'selfplay_s': 11.5, 'train_s': 2.5}
+{'iter': 222, 'elapsed_min': 765.7, 'buffer': 300000, 'policy_loss': 1.205, 'value_loss': 0.2806, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 223, 'elapsed_min': 766.0, 'buffer': 300000, 'policy_loss': 1.205, 'value_loss': 0.2857, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 224, 'elapsed_min': 783.1, 'buffer': 300000, 'policy_loss': 1.2074, 'value_loss': 0.2812, 'selfplay_s': 1024.6, 'train_s': 2.5}
+{'iter': 225, 'elapsed_min': 783.3, 'buffer': 300000, 'policy_loss': 1.2039, 'value_loss': 0.2843, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 226, 'elapsed_min': 783.6, 'buffer': 300000, 'policy_loss': 1.195, 'value_loss': 0.2829, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 227, 'elapsed_min': 789.0, 'buffer': 300000, 'policy_loss': 1.1957, 'value_loss': 0.2814, 'selfplay_s': 11.9, 'train_s': 314.5}
+{'iter': 228, 'elapsed_min': 789.2, 'buffer': 300000, 'policy_loss': 1.1978, 'value_loss': 0.2756, 'selfplay_s': 11.6, 'train_s': 2.5}
+{'iter': 229, 'elapsed_min': 789.5, 'buffer': 300000, 'policy_loss': 1.1891, 'value_loss': 0.2736, 'selfplay_s': 11.2, 'train_s': 2.5}
+{'iter': 230, 'elapsed_min': 789.7, 'buffer': 300000, 'policy_loss': 1.1916, 'value_loss': 0.2825, 'selfplay_s': 11.7, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 0.8333333333333334, 'draw': 0.0, 'loss': 0.16666666666666666}}}
+{'iter': 231, 'elapsed_min': 808.0, 'buffer': 300000, 'policy_loss': 1.1873, 'value_loss': 0.2779, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 232, 'elapsed_min': 808.3, 'buffer': 300000, 'policy_loss': 1.1854, 'value_loss': 0.2773, 'selfplay_s': 11.0, 'train_s': 2.5}
+{'iter': 233, 'elapsed_min': 824.2, 'buffer': 300000, 'policy_loss': 1.1879, 'value_loss': 0.2734, 'selfplay_s': 954.6, 'train_s': 2.5}
+{'iter': 234, 'elapsed_min': 824.4, 'buffer': 300000, 'policy_loss': 1.1907, 'value_loss': 0.284, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 235, 'elapsed_min': 824.7, 'buffer': 300000, 'policy_loss': 1.1895, 'value_loss': 0.2836, 'selfplay_s': 11.1, 'train_s': 2.5}
+{'iter': 236, 'elapsed_min': 824.9, 'buffer': 300000, 'policy_loss': 1.1925, 'value_loss': 0.283, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 237, 'elapsed_min': 825.1, 'buffer': 300000, 'policy_loss': 1.1876, 'value_loss': 0.2791, 'selfplay_s': 11.0, 'train_s': 2.5}
+{'iter': 238, 'elapsed_min': 841.2, 'buffer': 300000, 'policy_loss': 1.187, 'value_loss': 0.2783, 'selfplay_s': 960.2, 'train_s': 2.5}
+{'iter': 239, 'elapsed_min': 841.4, 'buffer': 300000, 'policy_loss': 1.1914, 'value_loss': 0.2676, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 240, 'elapsed_min': 841.6, 'buffer': 300000, 'policy_loss': 1.1789, 'value_loss': 0.2719, 'selfplay_s': 11.5, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 0.8333333333333334, 'draw': 0.16666666666666666, 'loss': 0.0}, 'd5': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}}}
+{'iter': 241, 'elapsed_min': 858.6, 'buffer': 300000, 'policy_loss': 1.1919, 'value_loss': 0.276, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 242, 'elapsed_min': 858.9, 'buffer': 300000, 'policy_loss': 1.177, 'value_loss': 0.2708, 'selfplay_s': 11.8, 'train_s': 2.5}
+{'iter': 243, 'elapsed_min': 875.1, 'buffer': 300000, 'policy_loss': 1.1852, 'value_loss': 0.2697, 'selfplay_s': 971.4, 'train_s': 2.5}
+{'iter': 244, 'elapsed_min': 875.3, 'buffer': 300000, 'policy_loss': 1.1865, 'value_loss': 0.2692, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 245, 'elapsed_min': 875.6, 'buffer': 300000, 'policy_loss': 1.1763, 'value_loss': 0.2808, 'selfplay_s': 11.5, 'train_s': 2.5}
+{'iter': 246, 'elapsed_min': 886.0, 'buffer': 300000, 'policy_loss': 1.1823, 'value_loss': 0.275, 'selfplay_s': 623.6, 'train_s': 2.5}
+{'iter': 247, 'elapsed_min': 886.2, 'buffer': 300000, 'policy_loss': 1.1787, 'value_loss': 0.2726, 'selfplay_s': 11.6, 'train_s': 2.5}
+{'iter': 248, 'elapsed_min': 886.5, 'buffer': 300000, 'policy_loss': 1.1789, 'value_loss': 0.2741, 'selfplay_s': 11.5, 'train_s': 2.5}
+{'iter': 249, 'elapsed_min': 886.7, 'buffer': 300000, 'policy_loss': 1.182, 'value_loss': 0.2789, 'selfplay_s': 11.2, 'train_s': 2.5}
+{'iter': 250, 'elapsed_min': 902.1, 'buffer': 300000, 'policy_loss': 1.1834, 'value_loss': 0.2751, 'selfplay_s': 10.9, 'train_s': 915.9, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}}}
+{'iter': 251, 'elapsed_min': 902.8, 'buffer': 300000, 'policy_loss': 1.1806, 'value_loss': 0.2749, 'selfplay_s': 11.9, 'train_s': 2.5}
+{'iter': 252, 'elapsed_min': 918.5, 'buffer': 300000, 'policy_loss': 1.178, 'value_loss': 0.2699, 'selfplay_s': 937.9, 'train_s': 2.5}
+{'iter': 253, 'elapsed_min': 918.7, 'buffer': 300000, 'policy_loss': 1.171, 'value_loss': 0.2739, 'selfplay_s': 11.6, 'train_s': 2.5}
+{'iter': 254, 'elapsed_min': 918.9, 'buffer': 300000, 'policy_loss': 1.1694, 'value_loss': 0.2723, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 255, 'elapsed_min': 919.2, 'buffer': 300000, 'policy_loss': 1.1736, 'value_loss': 0.2703, 'selfplay_s': 12.0, 'train_s': 2.5}
+{'iter': 256, 'elapsed_min': 919.4, 'buffer': 300000, 'policy_loss': 1.1811, 'value_loss': 0.2729, 'selfplay_s': 11.9, 'train_s': 2.5}
+{'iter': 257, 'elapsed_min': 919.7, 'buffer': 300000, 'policy_loss': 1.1765, 'value_loss': 0.2707, 'selfplay_s': 11.8, 'train_s': 2.5}
+{'iter': 258, 'elapsed_min': 919.9, 'buffer': 300000, 'policy_loss': 1.1733, 'value_loss': 0.273, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 259, 'elapsed_min': 920.1, 'buffer': 300000, 'policy_loss': 1.1675, 'value_loss': 0.2648, 'selfplay_s': 11.9, 'train_s': 2.5}
+{'iter': 260, 'elapsed_min': 920.4, 'buffer': 300000, 'policy_loss': 1.1674, 'value_loss': 0.2651, 'selfplay_s': 11.1, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 0.8333333333333334, 'draw': 0.0, 'loss': 0.16666666666666666}}}
+{'iter': 261, 'elapsed_min': 921.0, 'buffer': 300000, 'policy_loss': 1.1666, 'value_loss': 0.2709, 'selfplay_s': 11.6, 'train_s': 2.5}
+{'iter': 262, 'elapsed_min': 921.2, 'buffer': 300000, 'policy_loss': 1.1661, 'value_loss': 0.2707, 'selfplay_s': 11.8, 'train_s': 2.5}
+{'iter': 263, 'elapsed_min': 921.5, 'buffer': 300000, 'policy_loss': 1.1653, 'value_loss': 0.2726, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 264, 'elapsed_min': 921.7, 'buffer': 300000, 'policy_loss': 1.1678, 'value_loss': 0.2724, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 265, 'elapsed_min': 921.9, 'buffer': 300000, 'policy_loss': 1.1628, 'value_loss': 0.2646, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 266, 'elapsed_min': 922.2, 'buffer': 300000, 'policy_loss': 1.167, 'value_loss': 0.2668, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 267, 'elapsed_min': 922.4, 'buffer': 300000, 'policy_loss': 1.1647, 'value_loss': 0.2669, 'selfplay_s': 11.6, 'train_s': 2.5}
+{'iter': 268, 'elapsed_min': 922.7, 'buffer': 300000, 'policy_loss': 1.1635, 'value_loss': 0.2671, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 269, 'elapsed_min': 938.0, 'buffer': 300000, 'policy_loss': 1.1692, 'value_loss': 0.2703, 'selfplay_s': 12.1, 'train_s': 910.1}
+{'iter': 270, 'elapsed_min': 938.2, 'buffer': 300000, 'policy_loss': 1.168, 'value_loss': 0.256, 'selfplay_s': 11.2, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 0.8333333333333334, 'draw': 0.0, 'loss': 0.16666666666666666}}}
+{'iter': 271, 'elapsed_min': 947.0, 'buffer': 300000, 'policy_loss': 1.1701, 'value_loss': 0.2581, 'selfplay_s': 12.0, 'train_s': 491.7}
+{'iter': 272, 'elapsed_min': 947.2, 'buffer': 300000, 'policy_loss': 1.1618, 'value_loss': 0.2629, 'selfplay_s': 11.2, 'train_s': 2.5}
+{'iter': 273, 'elapsed_min': 947.4, 'buffer': 300000, 'policy_loss': 1.1649, 'value_loss': 0.2575, 'selfplay_s': 11.8, 'train_s': 2.5}
+{'iter': 274, 'elapsed_min': 947.7, 'buffer': 300000, 'policy_loss': 1.1588, 'value_loss': 0.2584, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 275, 'elapsed_min': 947.9, 'buffer': 300000, 'policy_loss': 1.1638, 'value_loss': 0.2655, 'selfplay_s': 11.9, 'train_s': 2.5}
+{'iter': 276, 'elapsed_min': 948.1, 'buffer': 300000, 'policy_loss': 1.1568, 'value_loss': 0.2614, 'selfplay_s': 11.8, 'train_s': 2.5}
+{'iter': 277, 'elapsed_min': 963.4, 'buffer': 300000, 'policy_loss': 1.1638, 'value_loss': 0.2628, 'selfplay_s': 910.1, 'train_s': 2.5}
+{'iter': 278, 'elapsed_min': 963.6, 'buffer': 300000, 'policy_loss': 1.1615, 'value_loss': 0.2672, 'selfplay_s': 11.8, 'train_s': 2.5}
+{'iter': 279, 'elapsed_min': 963.8, 'buffer': 300000, 'policy_loss': 1.1547, 'value_loss': 0.256, 'selfplay_s': 11.1, 'train_s': 2.5}
+{'iter': 280, 'elapsed_min': 979.9, 'buffer': 300000, 'policy_loss': 1.1628, 'value_loss': 0.2629, 'selfplay_s': 963.9, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 0.8333333333333334, 'draw': 0.16666666666666666, 'loss': 0.0}, 'd5': {'win': 0.6666666666666666, 'draw': 0.0, 'loss': 0.3333333333333333}}}
+{'iter': 281, 'elapsed_min': 980.5, 'buffer': 300000, 'policy_loss': 1.1572, 'value_loss': 0.2637, 'selfplay_s': 11.2, 'train_s': 2.5}
+{'iter': 282, 'elapsed_min': 996.4, 'buffer': 300000, 'policy_loss': 1.1627, 'value_loss': 0.2585, 'selfplay_s': 953.9, 'train_s': 2.5}
+{'iter': 283, 'elapsed_min': 996.7, 'buffer': 300000, 'policy_loss': 1.1562, 'value_loss': 0.264, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 284, 'elapsed_min': 996.9, 'buffer': 300000, 'policy_loss': 1.1626, 'value_loss': 0.2574, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 285, 'elapsed_min': 997.1, 'buffer': 300000, 'policy_loss': 1.1583, 'value_loss': 0.2527, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 286, 'elapsed_min': 997.4, 'buffer': 300000, 'policy_loss': 1.1548, 'value_loss': 0.2517, 'selfplay_s': 11.9, 'train_s': 2.5}
+{'iter': 287, 'elapsed_min': 997.6, 'buffer': 300000, 'policy_loss': 1.1585, 'value_loss': 0.2583, 'selfplay_s': 11.6, 'train_s': 2.5}
+{'iter': 288, 'elapsed_min': 1008.0, 'buffer': 300000, 'policy_loss': 1.1579, 'value_loss': 0.2569, 'selfplay_s': 10.9, 'train_s': 610.0}
+{'iter': 289, 'elapsed_min': 1008.2, 'buffer': 300000, 'policy_loss': 1.152, 'value_loss': 0.2565, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 290, 'elapsed_min': 1008.4, 'buffer': 300000, 'policy_loss': 1.1515, 'value_loss': 0.253, 'selfplay_s': 12.0, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}}}
+{'iter': 291, 'elapsed_min': 1009.1, 'buffer': 300000, 'policy_loss': 1.1577, 'value_loss': 0.2583, 'selfplay_s': 12.3, 'train_s': 2.5}
+{'iter': 292, 'elapsed_min': 1025.6, 'buffer': 300000, 'policy_loss': 1.1493, 'value_loss': 0.255, 'selfplay_s': 991.4, 'train_s': 2.5}
+{'iter': 293, 'elapsed_min': 1025.9, 'buffer': 300000, 'policy_loss': 1.1541, 'value_loss': 0.2626, 'selfplay_s': 11.5, 'train_s': 2.5}
+{'iter': 294, 'elapsed_min': 1026.1, 'buffer': 300000, 'policy_loss': 1.1608, 'value_loss': 0.2602, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 295, 'elapsed_min': 1044.0, 'buffer': 300000, 'policy_loss': 1.1482, 'value_loss': 0.2566, 'selfplay_s': 1070.3, 'train_s': 2.5}
+{'iter': 296, 'elapsed_min': 1044.2, 'buffer': 300000, 'policy_loss': 1.1507, 'value_loss': 0.2574, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 297, 'elapsed_min': 1044.5, 'buffer': 300000, 'policy_loss': 1.1494, 'value_loss': 0.2516, 'selfplay_s': 11.6, 'train_s': 2.5}
+{'iter': 298, 'elapsed_min': 1059.8, 'buffer': 300000, 'policy_loss': 1.1483, 'value_loss': 0.2507, 'selfplay_s': 11.6, 'train_s': 906.6}
+{'iter': 299, 'elapsed_min': 1060.0, 'buffer': 300000, 'policy_loss': 1.1457, 'value_loss': 0.2596, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 300, 'elapsed_min': 1060.2, 'buffer': 300000, 'policy_loss': 1.1432, 'value_loss': 0.2577, 'selfplay_s': 10.3, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}}}
+{'iter': 301, 'elapsed_min': 1069.3, 'buffer': 300000, 'policy_loss': 1.1461, 'value_loss': 0.2528, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 302, 'elapsed_min': 1069.5, 'buffer': 300000, 'policy_loss': 1.1474, 'value_loss': 0.2501, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 303, 'elapsed_min': 1069.8, 'buffer': 300000, 'policy_loss': 1.1454, 'value_loss': 0.2567, 'selfplay_s': 11.6, 'train_s': 2.5}
+{'iter': 304, 'elapsed_min': 1070.0, 'buffer': 300000, 'policy_loss': 1.1458, 'value_loss': 0.2667, 'selfplay_s': 10.9, 'train_s': 2.5}
+{'iter': 305, 'elapsed_min': 1078.8, 'buffer': 300000, 'policy_loss': 1.1408, 'value_loss': 0.2574, 'selfplay_s': 10.7, 'train_s': 516.8}
+{'iter': 306, 'elapsed_min': 1079.0, 'buffer': 300000, 'policy_loss': 1.1486, 'value_loss': 0.2603, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 307, 'elapsed_min': 1079.3, 'buffer': 300000, 'policy_loss': 1.1548, 'value_loss': 0.2584, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 308, 'elapsed_min': 1079.5, 'buffer': 300000, 'policy_loss': 1.1516, 'value_loss': 0.2597, 'selfplay_s': 11.5, 'train_s': 2.5}
+{'iter': 309, 'elapsed_min': 1095.1, 'buffer': 300000, 'policy_loss': 1.1457, 'value_loss': 0.2578, 'selfplay_s': 934.7, 'train_s': 2.5}
+{'iter': 310, 'elapsed_min': 1095.3, 'buffer': 300000, 'policy_loss': 1.1439, 'value_loss': 0.2503, 'selfplay_s': 11.5, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}}}
+{'iter': 311, 'elapsed_min': 1112.2, 'buffer': 300000, 'policy_loss': 1.1528, 'value_loss': 0.2551, 'selfplay_s': 988.4, 'train_s': 2.5}
+{'iter': 312, 'elapsed_min': 1112.4, 'buffer': 300000, 'policy_loss': 1.1479, 'value_loss': 0.2467, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 313, 'elapsed_min': 1112.6, 'buffer': 300000, 'policy_loss': 1.1462, 'value_loss': 0.2575, 'selfplay_s': 11.5, 'train_s': 2.5}
+{'iter': 314, 'elapsed_min': 1128.8, 'buffer': 300000, 'policy_loss': 1.1404, 'value_loss': 0.2571, 'selfplay_s': 964.5, 'train_s': 2.5}
+{'iter': 315, 'elapsed_min': 1129.0, 'buffer': 300000, 'policy_loss': 1.1333, 'value_loss': 0.2565, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 316, 'elapsed_min': 1129.2, 'buffer': 300000, 'policy_loss': 1.1503, 'value_loss': 0.2543, 'selfplay_s': 11.5, 'train_s': 2.5}
+{'iter': 317, 'elapsed_min': 1129.5, 'buffer': 300000, 'policy_loss': 1.1423, 'value_loss': 0.2585, 'selfplay_s': 11.8, 'train_s': 2.5}
+{'iter': 318, 'elapsed_min': 1129.7, 'buffer': 300000, 'policy_loss': 1.1384, 'value_loss': 0.2603, 'selfplay_s': 11.5, 'train_s': 2.5}
+{'iter': 319, 'elapsed_min': 1145.9, 'buffer': 300000, 'policy_loss': 1.1381, 'value_loss': 0.2531, 'selfplay_s': 966.9, 'train_s': 2.5}
+{'iter': 320, 'elapsed_min': 1146.1, 'buffer': 300000, 'policy_loss': 1.1428, 'value_loss': 0.2503, 'selfplay_s': 11.5, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 0.8333333333333334, 'draw': 0.0, 'loss': 0.16666666666666666}}}
+{'iter': 321, 'elapsed_min': 1163.7, 'buffer': 300000, 'policy_loss': 1.1403, 'value_loss': 0.2586, 'selfplay_s': 1028.9, 'train_s': 2.5}
+{'iter': 322, 'elapsed_min': 1163.9, 'buffer': 300000, 'policy_loss': 1.1416, 'value_loss': 0.2626, 'selfplay_s': 11.2, 'train_s': 2.5}
+{'iter': 323, 'elapsed_min': 1164.1, 'buffer': 300000, 'policy_loss': 1.1448, 'value_loss': 0.2577, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 324, 'elapsed_min': 1182.0, 'buffer': 300000, 'policy_loss': 1.137, 'value_loss': 0.2546, 'selfplay_s': 1070.8, 'train_s': 2.5}
+{'iter': 325, 'elapsed_min': 1182.3, 'buffer': 300000, 'policy_loss': 1.1382, 'value_loss': 0.2556, 'selfplay_s': 11.5, 'train_s': 2.5}
+{'iter': 326, 'elapsed_min': 1182.5, 'buffer': 300000, 'policy_loss': 1.1358, 'value_loss': 0.2514, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 327, 'elapsed_min': 1182.7, 'buffer': 300000, 'policy_loss': 1.1382, 'value_loss': 0.2615, 'selfplay_s': 11.7, 'train_s': 2.5}
+{'iter': 328, 'elapsed_min': 1190.2, 'buffer': 300000, 'policy_loss': 1.1346, 'value_loss': 0.2552, 'selfplay_s': 445.9, 'train_s': 2.5}
+{'iter': 329, 'elapsed_min': 1190.4, 'buffer': 300000, 'policy_loss': 1.1424, 'value_loss': 0.2522, 'selfplay_s': 11.0, 'train_s': 2.5}
+{'iter': 330, 'elapsed_min': 1190.7, 'buffer': 300000, 'policy_loss': 1.1326, 'value_loss': 0.2621, 'selfplay_s': 11.2, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}}}
+{'iter': 331, 'elapsed_min': 1206.6, 'buffer': 300000, 'policy_loss': 1.135, 'value_loss': 0.2476, 'selfplay_s': 11.4, 'train_s': 2.5}
+{'iter': 332, 'elapsed_min': 1222.3, 'buffer': 300000, 'policy_loss': 1.1309, 'value_loss': 0.2552, 'selfplay_s': 942.2, 'train_s': 2.5}
+{'iter': 333, 'elapsed_min': 1222.6, 'buffer': 300000, 'policy_loss': 1.1369, 'value_loss': 0.26, 'selfplay_s': 11.3, 'train_s': 2.5}
+{'iter': 334, 'elapsed_min': 1222.8, 'buffer': 300000, 'policy_loss': 1.135, 'value_loss': 0.2555, 'selfplay_s': 11.8, 'train_s': 2.5}
+{'iter': 335, 'elapsed_min': 1223.0, 'buffer': 300000, 'policy_loss': 1.1303, 'value_loss': 0.2555, 'selfplay_s': 11.0, 'train_s': 2.5}
+{'iter': 336, 'elapsed_min': 1240.0, 'buffer': 300000, 'policy_loss': 1.1273, 'value_loss': 0.2579, 'selfplay_s': 11.6, 'train_s': 2.5}
+{'iter': 337, 'elapsed_min': 1240.2, 'buffer': 300000, 'policy_loss': 1.135, 'value_loss': 0.2528, 'selfplay_s': 12.9, 'train_s': 2.6}
+{'iter': 338, 'elapsed_min': 1240.5, 'buffer': 300000, 'policy_loss': 1.1356, 'value_loss': 0.2598, 'selfplay_s': 12.3, 'train_s': 2.5}
+{'iter': 339, 'elapsed_min': 1240.7, 'buffer': 300000, 'policy_loss': 1.1313, 'value_loss': 0.2558, 'selfplay_s': 10.8, 'train_s': 2.5}
+{'iter': 340, 'elapsed_min': 1241.0, 'buffer': 300000, 'policy_loss': 1.1283, 'value_loss': 0.2571, 'selfplay_s': 13.0, 'train_s': 2.5, 'eval': {'d1': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd3': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}, 'd5': {'win': 1.0, 'draw': 0.0, 'loss': 0.0}}}
+{'iter': 341, 'elapsed_min': 1241.6, 'buffer': 300000, 'policy_loss': 1.1297, 'value_loss': 0.2531, 'selfplay_s': 12.9, 'train_s': 2.6}
+{'iter': 342, 'elapsed_min': 1241.9, 'buffer': 300000, 'policy_loss': 1.1319, 'value_loss': 0.2499, 'selfplay_s': 13.3, 'train_s': 2.6}
